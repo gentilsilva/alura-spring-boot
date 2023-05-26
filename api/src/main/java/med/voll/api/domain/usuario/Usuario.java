@@ -1,7 +1,10 @@
 package med.voll.api.domain.usuario;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,9 +27,9 @@ public class Usuario implements UserDetails {
     private String login;
     private String senha;
 
-    public Usuario(DadosCadastroUsuario dados, BCryptPasswordEncoder bCryptPasswordEncoder) {
-        this.login = dados.login();
-        this.senha = bCryptPasswordEncoder.encode(dados.senha());
+    public Usuario(DadosCadastroUsuario dadosCadastroUsuario, BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.login = dadosCadastroUsuario.login();
+        this.senha = bCryptPasswordEncoder.encode(dadosCadastroUsuario.senha());
     }
 
     @Override

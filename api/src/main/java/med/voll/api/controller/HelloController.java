@@ -12,5 +12,4 @@ public class HelloController {
     public String olaMundo() {
         return "Hello World Spring!";
     }
-
 }

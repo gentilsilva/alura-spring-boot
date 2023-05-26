@@ -20,7 +20,7 @@ public class UsuarioController {
     private UsuarioRepository usuarioRepository;
 
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
-    	return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder();
     }
 
     @PostMapping
